@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;900&family=Raleway:wght@300;400;600;700;900&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 1010px;
+  margin: 0 auto;
+}
+
+.crumbs {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 56px;
+  letter-spacing: 0.7px;
+  color: #1C1D1F;
+  margin: 32px 0 8px 0;
+}
+
+.subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #1C1D1F;
+  margin: 0 0 40px;
+}
+
+.content {
+  &-container {
+    display: flex;
+    width: 100%;
+  }
+
+  &-tabs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 32px;
+
+    &__tab {
+      display: flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: #F3F6F9;
+      border-radius: 8px;
+      height: 40px;
+      margin: 0 8px 8px 0;
+      font-family: 'Raleway', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 32px;
+      &:last-child {
+        margin: 0 0 8px 0;
+      }
+
+      span {
+        color: #83868A;
+      }
+    }
+  }
+}
+
+.table {
+  margin: 0 40px 0 0;
+  width: 100%;
+
+  &__row {
+    display: grid;
+    column-gap: 4px;
+    grid-template-columns: 152px 130px 91px 139px 150px;
+    padding: 24px 0;
+    &:not(:last-child) {
+      border-bottom: 1px solid #E2E4E8;
+    }
+    &:first-child {
+      border-bottom: transparent;
+    }
+  }
+
+  &__header {
+    padding: 0;
+
+    .table-cell {
+      font-size: 14px;
+      line-height: 1.7em;
+      font-weight: normal;
+      font-family: 'Raleway', sans-serif;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: #000000;
+      justify-content: flex-start;
+    }
+  }
+
+  &-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.43em;
+    letter-spacing: 0.6px;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+    color: #1C1D1F;
+    border-radius: 8px;
+
+    &--has-border {
+      border: 1px solid #E2E4E8;
+      border-radius: 8px;
+    }
+
+    &--logo {
+      font-size: 14px;
+      line-height: 24px;
+
+      .cell-number {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        background: #1C1D1F;
+        color: #FFFFFF;
+        flex-shrink: 0;
+        margin: 0 16px 0 0;
+        align-self: flex-start;
+      }
+
+      .bookmaker-logo {
+        width: 96px;
+      }
+    }
+
+    &--bonus {
+      background: #FFF5CF;
+
+      .gift-img {
+        margin: 0 8px 0 0;
+      }
+    }
+
+    &--feedbacks {
+      .message-img {
+        width: 20px;
+        margin: 0 10px 0 0;
+      }
+    }
+
+    &--complaints {
+      .success {
+        color: #77BE40;
+      }
+
+      .neutral {
+        color: #83868A;
+        white-space: pre-wrap;
+      }
+
+      .fail {
+        color: #E73D50;
+      }
+    }
+
+    &--cta {
+      padding: 0 0 0 12px;
+
+      .btn--cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 98px;
+        height: 48px;
+        background: #E95836;
+        border-radius: 8px;
+        margin: 0 4px 0 0;
+        color: #FFFFFF;
+        font-family: 'Raleway', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.5em;
+        letter-spacing: 0.6px;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+      }
+    }
+
+    .dropdown-trigger {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: #F3F6F9;
+    }
+  }
+}
+
+.sidebar {
+  width: 280px;
+  height: 100%;
+}
