@@ -16,48 +16,7 @@
         </ul>
 
         <div class="content-container">
-          <div class="table">
-            <div class="table__row table__header">
-              <div class="table-cell">Букмекер</div>
-              <div class="table-cell">Бонус</div>
-              <div class="table-cell">Отзывы</div>
-              <div class="table-cell">Жалобы</div>
-            </div>
-
-            <div class="table__row" v-for="bookmaker of mockData">
-              <div class="table-cell table-cell--logo">
-                <div class="cell-number">{{bookmaker.id}}</div>
-                <div>
-                  <img :src="'/img/logos/' + bookmaker.logo + '.svg'" class="bookmaker-logo">
-                  <span>FONBET</span>
-                </div>
-              </div>
-
-              <div class="table-cell table-cell--bonus">
-                <img :src="'/img/gift.svg'" alt="" class="gift-img">
-                {{ bookmaker.bonus }} &#8381;
-              </div>
-
-              <div class="table-cell table-cell--has-border table-cell--feedbacks">
-                <img :src="'/img/message.svg'" alt="" class="message-img">
-                {{ bookmaker.feedbacks }}
-              </div>
-
-              <div class="table-cell table-cell--has-border table-cell--complaints">
-                <span class="success">{{ bookmaker.complaints[0] }}</span>
-                <span class="neutral">&nbsp;/&nbsp;{{ bookmaker.complaints[1] }}&nbsp;/&nbsp;</span>
-                <span class="fail">{{ bookmaker.complaints[2] }}</span>
-              </div>
-
-              <div class="table-cell table-cell--cta">
-                <span class="btn--cta">Играть</span>
-                <div class="dropdown-trigger">
-                  <img :src="'/img/dropdown-arrow.svg'" alt="" class="message-img">
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <BookmakersTable />
           <div class="sidebar">
           </div>
         </div>
@@ -67,11 +26,12 @@
 </template>
 
 <script>
+import BookmakersTable from "./components/BookmakersTable";
 
 export default {
   name: 'App',
   components: {
-
+    BookmakersTable
   },
 
   data() {
