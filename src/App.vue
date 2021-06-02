@@ -17,8 +17,7 @@
 
         <div class="content-container">
           <BookmakersTable />
-          <div class="sidebar">
-          </div>
+          <Sidebar />
         </div>
       </div>
     </div>
@@ -27,11 +26,13 @@
 
 <script>
 import BookmakersTable from "./components/BookmakersTable";
+import Sidebar from "./components/Sidebar"
 
 export default {
   name: 'App',
   components: {
-    BookmakersTable
+    BookmakersTable,
+    Sidebar
   },
 
   data() {
