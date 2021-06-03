@@ -101,9 +101,6 @@
 <script>
   export default {
     name: 'BookmakersTable',
-    components: {
-
-    },
 
     data() {
       return {
@@ -157,27 +154,39 @@
 
 <style lang="scss">
   .table {
-    margin: 0 40px 0 0;
+    //margin: 0 40px 0 0;
     width: 100%;
 
     &__row {
       display: grid;
+      //grid-template-areas:
+      //  "logo bonus feedbacks complaints cta"
+      //  "details details details details details";
+
       grid-template-areas:
-        "logo bonus feedbacks complaints cta"
-        "details details details details details";
+        "logo bonus"
+        "feedbacks feedbacks"
+        "complaints complaints"
+        "cta cta"
+        "details details";
       column-gap: 4px;
       grid-template-columns: 152px 130px 91px 139px 150px;
-      padding: 24px 0;
+      padding: 24px 0; //24 0
       &:not(:last-child) {
         border-bottom: 1px solid #E2E4E8;
       }
       &:first-child {
         border-bottom: transparent;
       }
+
+      &:nth-child(2) { //mobile
+        padding: 0 0 24px;
+      }
     }
 
     &__header {
       padding: 0;
+      display: none; //grid
 
       .table-cell {
         font-size: 14px;

@@ -4,8 +4,17 @@
       <div class="crumbs">
         Fanler • Рейтинг букмекеров
       </div>
-      <h1 class="title">Рейтинг букмекеров <span style="color: #83868A; font-weight: 400">819</span></h1>
-      <p class="subtitle">Все букмекерские конторы у нас на сайте имеют подробный обзор плюсов и минусов, экспертную оценку коэффициентов и выбора ставок, а так же информацию о бонусах. Выбрать легальную БК, принимающую ставки на спорт через интернет, также помогут наши независимые рейтинги.</p>
+
+      <Title />
+
+      <div class="sidebar--mobile-static">
+        <div class="filters">
+          <img width="11" src="../public/img/icon-filters.svg" alt="">
+          Фильтры</div>
+        <div class="new">
+          <img width="15" src="../public/img/icon-new.svg" alt="">
+          Новые</div>
+      </div>
 
       <div class="content">
         <ul class="content-tabs">
@@ -25,12 +34,14 @@
 </template>
 
 <script>
+import Title from "./components/Title";
 import BookmakersTable from "./components/BookmakersTable";
 import Sidebar from "./components/Sidebar"
 
 export default {
   name: 'App',
   components: {
+    Title,
     BookmakersTable,
     Sidebar
   },
@@ -74,16 +85,36 @@ export default {
           feedbacks: 789,
           complaints: [248, 104, 55],
         }
-      ]
+      ],
+      isMobile: true
     }
   },
-
-  mounted() {
-    console.log(this.mockData)
-  }
 }
 </script>
 
 <style lang="scss">
   @import "assets/styles";
+
+  .sidebar--mobile-static {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 24px 0;
+
+    div {
+      border: 1px solid #E2E4E8;
+      box-sizing: border-box;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 140px;
+      height: 40px;
+      font-size: 18px;
+      line-height: 1.78em;
+
+      img {
+        margin: 0 10px 0 0;
+      }
+    }
+  }
 </style>

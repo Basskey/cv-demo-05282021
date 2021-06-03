@@ -145,6 +145,16 @@
         }
       }
 
+      .search {
+        border: 1px solid #E2E4E8;
+        box-sizing: border-box;
+        border-radius: 80px;
+        height: 32px;
+        padding: 0 18px 0 40px;
+        background: url("/img/icon-search.svg") no-repeat 18px center;
+        outline: none;
+      }
+
       .filter-list {
         list-style: none;
         padding: 16px 0;
