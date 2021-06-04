@@ -37,11 +37,6 @@
     margin: 0 0 10px;
   }
 
-  //h1 {
-  //  font-size: 44px;
-  //  margin: 32px 0 8px 0;
-  //}
-
   .go-back {
     background: url("/img/icon-goback.svg") no-repeat center;
     width: 1.7em;
@@ -100,6 +95,18 @@
           }
         }
       }
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+
+    .title {
+      font-size: 44px;
+      margin: 32px 0 8px 0;
+    }
+
+    .subtitle {
+      margin: 0 0 40px;
     }
   }
 </style>

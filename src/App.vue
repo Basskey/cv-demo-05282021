@@ -120,4 +120,10 @@ export default {
       }
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    .sidebar--mobile-static {
+      display: none;
+    }
+  }
 </style>

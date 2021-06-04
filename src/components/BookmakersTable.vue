@@ -747,4 +747,10 @@
       }
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    .table {
+      margin: 0 40px 0 0;
+    }
+  }
 </style>
