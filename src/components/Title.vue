@@ -68,7 +68,7 @@
     &.collapsed {
       height: calc(1.7em * 3);
       &::after { //temporal
-        content: '... читать полсностью';
+        content: '... читать полностью';
         text-decoration: underline;
         position: absolute;
         bottom: 0;

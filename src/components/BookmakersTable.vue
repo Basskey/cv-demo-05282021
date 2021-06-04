@@ -24,18 +24,21 @@
       </div>
 
       <div class="table-cell table-cell--has-border table-cell--feedbacks">
+        <span class="mobile-title">Отзывы</span>
         <img :src="'/img/message.svg'" alt="" class="message-img">
         {{ bookmaker.feedbacks }}
       </div>
 
       <div class="table-cell table-cell--has-border table-cell--complaints">
+        <span class="mobile-title">Жалобы</span>
         <span class="success">{{ bookmaker.complaints[0] }}</span>
         <span class="neutral">&nbsp;/&nbsp;{{ bookmaker.complaints[1] }}&nbsp;/&nbsp;</span>
         <span class="fail">{{ bookmaker.complaints[2] }}</span>
       </div>
 
       <div class="table-cell table-cell--cta">
-        <span class="btn--cta">Играть</span>
+        <span class="btn btn--cta">Играть</span>
+        <span class="btn btn--overview">Обзор</span>
         <div class="dropdown-trigger" v-on:click="bookmaker.isActive = !bookmaker.isActive">
           <img :src="'/img/dropdown-arrow.svg'" alt="" class="message-img">
         </div>
@@ -112,7 +115,7 @@
             bonus: 10000,
             feedbacks: 789,
             complaints: [248, 104, 55],
-            isActive: false,
+            isActive: true,
           },
           {
             id: 2,
@@ -167,8 +170,8 @@
         "logo bonus"
         "feedbacks feedbacks"
         "complaints complaints"
-        "cta cta"
-        "details details";
+        "details details"
+        "cta cta";
       column-gap: 4px;
       grid-template-columns: 152px 130px 91px 139px 150px;
       padding: 24px 0; //24 0
@@ -211,9 +214,11 @@
       color: #1C1D1F;
       border-radius: 8px;
 
+      margin: 0 0 8px 0;
+
       &--has-border {
-        border: 1px solid #E2E4E8;
-        border-radius: 8px;
+        //border: 1px solid #E2E4E8;
+        //border-radius: 8px;
       }
 
       &--logo {
@@ -222,12 +227,15 @@
         grid-area: logo;
 
         .cell-number {
-          width: 24px;
-          height: 24px;
+          //width: 24px;
+          //height: 24px;
+          //border-radius: 8px;
+          width: 16px;
+          height: 16px;
+          border-radius: 4px;
           display: flex;
           justify-content: center;
           align-items: center;
-          border-radius: 8px;
           background: #1C1D1F;
           color: #FFFFFF;
           flex-shrink: 0;
@@ -252,10 +260,18 @@
       &--feedbacks {
         grid-area: feedbacks;
 
+
         .message-img {
           width: 20px;
           margin: 0 10px 0 0;
+          display: none; //mob
         }
+      }
+
+      &--feedbacks,
+      &--complaints {
+        padding: 0 0 0 32px; //mob
+        justify-content: flex-start; //mob
       }
 
       &--complaints {
@@ -277,18 +293,14 @@
 
       &--cta {
         grid-area: cta;
+        padding: 0 0 0 30px; //0 0 0 12
 
-        padding: 0 0 0 12px;
-
-        .btn--cta {
+        .btn {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 98px;
           height: 48px;
-          background: #E95836;
           border-radius: 8px;
-          margin: 0 4px 0 0;
           color: #FFFFFF;
           font-family: 'Raleway', sans-serif;
           font-style: normal;
@@ -297,6 +309,26 @@
           line-height: 1.5em;
           letter-spacing: 0.6px;
           font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+          padding: 12px 20px;
+        }
+
+        .btn--cta {
+          background: #E95836;
+          margin: 0 4px 0 0;
+        }
+
+        .btn--overview {
+          background: #1C1D1F;
+          margin: 0 8px 0 0;
+        }
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        .info {
+          order: -1;
+          width: 100%;
         }
       }
 
@@ -311,24 +343,38 @@
 
         .mobile-selector {
           width: 100%;
+          height: 48px;
+          border-top: 1px solid #E2E4E8;
+          border-bottom: 1px solid #E2E4E8;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
 
         .comparison-container {
           display: flex;
           justify-content: space-between;
+          flex-direction: column;
 
           .comparison-list {
-            width: calc(100% / 3);
+            width: 100%; //calc(100% / 3)
             list-style: none;
-            padding: 0 16px;
-            &:not(:last-of-type) {
-              border-right: 1px solid #E2E4E8;
+            margin: 0;
+            padding: 16px 0; // 0 16
+            //&:not(:last-of-type) {
+            //  border-right: 1px solid #E2E4E8;
+            //}
+            &:last-of-type {
+              border-top: 1px solid #E2E4E8;;
             }
 
             &__title {
               display: flex;
               align-items: center;
               white-space: pre-wrap;
+              font-size: 15px;
+              line-height: 1.73em;
+              margin: 0 0 8px;
               &::before {
                 content: '';
                 background-size: contain;
@@ -363,18 +409,21 @@
               font-family: 'Raleway', sans-serif;
               font-style: normal;
               font-weight: normal;
-              font-size: 14px;
-              line-height: 1.7em;
+              //font-size: 14px;
+              //line-height: 1.7em;
+              font-size: 12px;
+              line-height: 1.8em;
               font-feature-settings: 'pnum' on, 'lnum' on;
               color: #1C1D1F;
-              padding: 0 0 0 5px;
+              padding: 0 0 0 12px; //0 0 0 5
+              margin: 0;
               &::before {
                 content: '• ';
                 white-space: pre-wrap;
               }
 
-              &:not(last-child) {
-                margin: 0 0 20px 0;
+              &:not(:last-child) {
+                margin: 0 0 10px 0;
               }
             }
           }
@@ -383,22 +432,38 @@
         .bonuses {
 
           .bonus {
-            display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            height: 56px;
+
+            display: flex;
+            //justify-content: space-between;
+            //align-items: center;
+            padding: 56px 16px 24px;
+            //height: 56px;
             background:  #FFF5CF url("/img/gift.svg") no-repeat;
-            background-position: 16px;
+            //background-position: 16px;
+            background-position: center 16px;
             border-radius: 8px;
-            padding: 4px 4px 4px 56px;
-            margin: 0 0 8px 0;
+            //padding: 4px 4px 4px 56px;
+            margin: 0 0 16px 0;
             &:last-of-type {
               margin: 0 0 16px 0;
+            }
+
+            &:not(:first-child) {
+              display: none;
+            }
+
+            span {
+              margin: 0 0 16px;
+              font-weight: 900;
             }
 
             .bonus-cta {
               width: 174px;
               height: 48px;
+              padding: 12px 20px;
               background: #1C1D1F;
               border: none;
               border-radius: 8px;
@@ -420,14 +485,20 @@
 
         .note {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           justify-content: center;
-          height: 72px;
+          flex-direction: column;
+          //height: 72px;
           border: 1px solid #E2E4E8;
           border-radius: 8px;
-          padding: 16px 16px 16px 56px;
-          background: url("/img/icon-note.svg") no-repeat 16px center;
+          padding: 16px; //16 16 16 56
+          //background: url("/img/icon-note.svg") no-repeat 16px center;
           margin: 0 0 32px 0;
+
+          span {
+            font-weight: 700;
+            margin: 0 0 8px;
+          }
 
           &-link {
             display: block;
@@ -514,6 +585,10 @@
             }
           }
         }
+      }
+
+      .mobile-title {
+        margin: 0 16px 0 0;
       }
 
       .dropdown-trigger {

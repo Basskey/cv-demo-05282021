@@ -86,6 +86,7 @@
 
 <style lang="scss">
   .sidebar {
+    display: none; //mob
     width: 280px;
     border: 2px solid #E2E4E8;
     border-radius: 14px;
