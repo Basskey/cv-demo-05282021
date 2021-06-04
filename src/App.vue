@@ -97,7 +97,7 @@ export default {
 
   .sidebar--mobile-static {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 0 0 24px 0;
 
     div {
@@ -111,6 +111,9 @@ export default {
       height: 40px;
       font-size: 18px;
       line-height: 1.78em;
+      &:first-child {
+        margin: 0 8px 0 0;
+      }
 
       img {
         margin: 0 10px 0 0;

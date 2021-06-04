@@ -26,8 +26,6 @@ body, html {
 
 .crumbs {
   display: none;
-  font-size: 18px;
-  line-height: 32px;
 }
 
 h3 {
@@ -81,9 +79,21 @@ h3 {
   }
 }
 
+@media screen and (min-width: 768px) {
 
+  .layout {
+    padding: 16px 0;
+  }
 
-.sidebar {
-  width: 280px;
-  height: 100%;
+  .wrapper {
+    margin: 0 56px;
+  }
+
+  .crumbs {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.78em;
+    margin: 0 0 24px 0;
+  }
 }
+

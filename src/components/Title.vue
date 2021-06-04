@@ -77,4 +77,29 @@
       }
     }
   }
+
+  @media (min-width: 768px) {
+    .title-container {
+      padding: 0;
+
+      .go-back {
+        display: none;
+      }
+
+      .title {
+        font-size: 44px;
+        line-height: 1.27em;
+        margin: 0 0 8px;
+      }
+
+      .subtitle {
+        &.collapsed {
+          height: auto;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 </style>

@@ -162,9 +162,6 @@
 
     &__row {
       display: grid;
-      //grid-template-areas:
-      //  "logo bonus feedbacks complaints cta"
-      //  "details details details details details";
 
       grid-template-areas:
         "logo bonus"
@@ -174,7 +171,7 @@
         "cta cta";
       column-gap: 4px;
       grid-template-columns: auto 130px; // 152px 130px 91px 139px 150px;
-      padding: 24px 0; //24 0
+      padding: 24px 0;
       &:not(:last-child) {
         border-bottom: 1px solid #E2E4E8;
       }
@@ -189,7 +186,7 @@
 
     &__header {
       padding: 0;
-      display: none; //grid
+      display: none;
 
       .table-cell {
         font-size: 14px;
@@ -204,7 +201,6 @@
 
     &-cell {
       display: flex;
-      //justify-content: center;
       align-items: center;
       font-weight: 700;
       font-size: 14px;
@@ -213,13 +209,7 @@
       font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
       color: #1C1D1F;
       border-radius: 8px;
-
       margin: 0 0 8px 0;
-
-      &--has-border {
-        //border: 1px solid #E2E4E8;
-        //border-radius: 8px;
-      }
 
       &--logo {
         font-size: 14px;
@@ -227,9 +217,6 @@
         grid-area: logo;
 
         .cell-number {
-          //width: 24px;
-          //height: 24px;
-          //border-radius: 8px;
           width: 16px;
           height: 16px;
           border-radius: 4px;
@@ -267,9 +254,7 @@
 
 
         .message-img {
-          width: 20px;
-          margin: 0 10px 0 0;
-          display: none; //mob
+          display: none;
         }
       }
 
@@ -608,6 +593,79 @@
         height: 48px;
         border-radius: 8px;
         background: #F3F6F9;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .table {
+      &__row {
+        grid-template-areas:
+          "logo bonus feedbacks complaints cta"
+          "details details details details details";
+        grid-template-columns: 152px 130px 91px 139px 150px;
+        &:nth-child(2) {
+          padding: 24px 0;
+        }
+      }
+
+      &__header {
+        display: grid;
+      }
+
+      &-cell {
+        justify-content: center;
+        margin: 0 4px 0 0;
+        flex-shrink: 0;
+
+        &--logo {
+
+          .cell-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 8px;
+            margin: 4px 16px 0 0;
+          }
+        }
+
+        &--feedbacks {
+          .message-img {
+            width: 20px;
+            margin: 0 10px 0 0;
+            display: block;
+          }
+        }
+
+        &--complaints {
+          span {
+            flex-shrink: 0;
+            font-weight: 700;
+          }
+        }
+
+        &--feedbacks,
+        &--complaints {
+          padding: 16px 14px;
+          justify-content: flex-start; //mob
+
+          .mobile-title {
+            display: none;
+          }
+        }
+
+        &--has-border {
+          border: 1px solid #E2E4E8;
+          border-radius: 8px;
+        }
+
+        &--cta {
+          .btn {
+            &--overview {
+              display: none;
+            }
+          }
+        }
       }
     }
   }
