@@ -49,14 +49,11 @@
   }
 
   .subtitle {
-    font-family: 'Raleway', sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 1.7em;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #1C1D1F;
-    margin: 0 0 16px; // 0 0 40
+    margin: 0 0 16px;
     overflow: hidden;
     position: relative;
 

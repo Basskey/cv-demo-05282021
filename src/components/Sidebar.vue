@@ -102,8 +102,6 @@
       &-title {
         display: flex;
         align-items: center;
-        font-family: 'Raleway', sans-serif;
-        font-style: normal;
         font-weight: bold;
         font-size: 18px;
         line-height: 1.3em;
@@ -133,8 +131,6 @@
         }
 
         &__title {
-          font-family: 'Raleway', sans-serif;
-          font-style: normal;
           font-weight: 600;
           font-size: 16px;
           line-height: 2em;
@@ -169,9 +165,6 @@
 
           li {
             display: flex;
-            font-family: 'Raleway', sans-serif;
-            font-style: normal;
-            font-weight: normal;
             font-size: 14px;
             line-height: 1.7em;
             font-feature-settings: 'pnum' on, 'lnum' on;
@@ -190,9 +183,6 @@
           }
 
           .show-more {
-            font-family: 'Raleway', sans-serif;
-            font-style: normal;
-            font-weight: normal;
             font-size: 14px;
             line-height: 1.7em;
             text-decoration-line: underline;

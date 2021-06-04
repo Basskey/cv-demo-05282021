@@ -184,7 +184,7 @@
         "details details"
         "cta cta";
       column-gap: 4px;
-      grid-template-columns: auto 130px; // 152px 130px 91px 139px 150px;
+      grid-template-columns: auto 130px;
       padding: 24px 0;
       &:not(:last-child) {
         border-bottom: 1px solid #E2E4E8;
@@ -193,7 +193,7 @@
         border-bottom: transparent;
       }
 
-      &:nth-child(2) { //mobile
+      &:nth-child(2) {
         padding: 0 0 24px;
       }
 
@@ -215,8 +215,6 @@
         font-size: 14px;
         line-height: 1.7em;
         font-weight: normal;
-        font-family: 'Raleway', sans-serif;
-        font-feature-settings: 'pnum' on, 'lnum' on;
         color: #000000;
         justify-content: flex-start;
       }
@@ -284,8 +282,8 @@
 
       &--feedbacks,
       &--complaints {
-        padding: 0 0 0 32px; //mob
-        justify-content: flex-start; //mob
+        padding: 0 0 0 32px;
+        justify-content: flex-start;
       }
 
       &--complaints {
@@ -307,7 +305,6 @@
 
       &--cta {
         grid-area: cta;
-        //padding: 0 0 0 30px; //0 0 0 12
         padding: 0 0 0 14px;
         justify-content: flex-end;
 
@@ -318,8 +315,6 @@
           height: 48px;
           border-radius: 8px;
           color: #FFFFFF;
-          font-family: 'Raleway', sans-serif;
-          font-style: normal;
           font-weight: 700;
           font-size: 16px;
           line-height: 1.5em;
@@ -330,7 +325,7 @@
 
         .btn--cta {
           background: #E95836;
-          margin: 0 8px 0 0; // 0 4 0 0
+          margin: 0 8px 0 0;
         }
 
         .btn--overview {
@@ -428,16 +423,11 @@
 
             li {
               display: flex;
-              font-family: 'Raleway', sans-serif;
-              font-style: normal;
-              font-weight: normal;
-              //font-size: 14px;
-              //line-height: 1.7em;
               font-size: 12px;
               line-height: 1.8em;
               font-feature-settings: 'pnum' on, 'lnum' on;
               color: #1C1D1F;
-              padding: 0 0 0 12px; //0 0 0 5
+              padding: 0 0 0 12px;
               margin: 0;
               &:not(:last-child) {
                 margin: 0 0 10px 0;
@@ -486,8 +476,6 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              font-family: 'Raleway', sans-serif;
-              font-style: normal;
               font-weight: bold;
               font-size: 16px;
               line-height: 1.5em;
@@ -517,9 +505,6 @@
           &-link {
             display: block;
             flex-shrink: 0;
-            font-family: 'Raleway', sans-serif;
-            font-style: normal;
-            font-weight: normal;
             font-size: 16px;
             line-height: 2em;
             text-decoration-line: underline;
@@ -595,7 +580,7 @@
         grid-template-areas:
           "logo bonus feedbacks complaints cta"
           "details details details details details";
-        grid-template-columns: 152px 130px 91px 139px auto; //auto = 150px
+        grid-template-columns: 152px 130px 91px 139px auto;
         &:nth-child(2) {
           padding: 24px 0;
         }
@@ -638,7 +623,7 @@
         &--feedbacks,
         &--complaints {
           padding: 16px 14px;
-          justify-content: flex-start; //mob
+          justify-content: flex-start;
 
           .mobile-title {
             display: none;
@@ -752,8 +737,6 @@
               border-radius: 8px;
               border: none;
               color: #FFFFFF;
-              font-family: 'Raleway', sans-serif;
-              font-style: normal;
               font-weight: bold;
               font-size: 16px;
               line-height: 1.5em;
