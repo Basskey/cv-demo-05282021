@@ -9,6 +9,7 @@
     </div>
 
     <div class="table__row"
+         :class="{ highlighted: bookmaker.isHighlighted }"
          v-for="bookmaker of mockData">
       <div class="table-cell table-cell--logo">
         <div class="cell-number">{{bookmaker.id}}</div>
@@ -48,6 +49,15 @@
            v-bind:class="{ active: bookmaker.isActive }">
         <div class="mobile-selector">
           <span>На мобильных</span>
+          <a href="#" class="iOS">
+            <img width="11" src="../../public/img/icon-iOS.svg" alt="">
+          </a>
+          <a href="#" class="android">
+            <img width="11" src="../../public/img/icon-android.svg" alt="">
+          </a>
+          <a href="#" class="mobile">
+            <img width="11" src="../../public/img/icon-mobile.svg" alt="">
+          </a>
         </div>
         <div class="comparison-container">
           <ul class="comparison-list">
@@ -65,7 +75,7 @@
           </ul>
           <ul class="comparison-list">
             <h3 class="comparison-list__title comparison-list__title--rating">Место в рейтингах</h3>
-            <li>Народный</li>
+            <li class="highlighted">Народный</li>
             <li>Надёжность</li>
             <li>Коэффициенты</li>
             <li>Выбор ставок</li>
@@ -115,7 +125,8 @@
             bonus: 10000,
             feedbacks: 789,
             complaints: [248, 104, 55],
-            isActive: true,
+            isActive: false,
+            isHighlighted: true,
           },
           {
             id: 2,
@@ -124,6 +135,7 @@
             feedbacks: 789,
             complaints: [248, 104, 55],
             isActive: false,
+            isHighlighted: false,
           },
           {
             id: 3,
@@ -132,6 +144,7 @@
             feedbacks: 789,
             complaints: [248, 104, 55],
             isActive: false,
+            isHighlighted: false,
           },
           {
             id: 4,
@@ -140,6 +153,7 @@
             feedbacks: 789,
             complaints: [248, 104, 55],
             isActive: false,
+            isHighlighted: false,
           },
           {
             id: 5,
@@ -148,6 +162,7 @@
             feedbacks: 789,
             complaints: [248, 104, 55],
             isActive: false,
+            isHighlighted: false,
           }
         ]
       }
@@ -180,6 +195,15 @@
 
       &:nth-child(2) { //mobile
         padding: 0 0 24px;
+      }
+
+      &.highlighted {
+       .cell-number {
+         background: #E95836;
+       }
+        .table-cell--bonus {
+          background: #FFC64C;
+        }
       }
     }
 
@@ -340,7 +364,16 @@
           border-bottom: 1px solid #E2E4E8;
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: flex-start;
+
+          span {
+            margin: 0 auto 0 0;
+          }
+
+          img {
+            width: 16px;
+            margin: 0 10px;
+          }
         }
 
         .comparison-container {
@@ -629,6 +662,16 @@
         &--details {
           .mobile-selector {
             border: none;
+            justify-content: flex-start;
+
+            span {
+              margin: 0;
+            }
+
+            img {
+              width: 16px;
+              margin: 0 14px;
+            }
           }
 
           .comparison-container {
