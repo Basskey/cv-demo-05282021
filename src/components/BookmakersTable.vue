@@ -157,7 +157,6 @@
 
 <style lang="scss">
   .table {
-    //margin: 0 40px 0 0;
     width: 100%;
 
     &__row {
@@ -243,6 +242,7 @@
       &--bonus {
         background: #FFF5CF;
         grid-area: bonus;
+        justify-content: center;
 
         .gift-img {
           margin: 0 8px 0 0;
@@ -349,13 +349,10 @@
           flex-direction: column;
 
           .comparison-list {
-            width: 100%; //calc(100% / 3)
+            width: 100%;
             list-style: none;
             margin: 0;
-            padding: 16px 0; // 0 16
-            //&:not(:last-of-type) {
-            //  border-right: 1px solid #E2E4E8;
-            //}
+            padding: 16px 0;
             &:last-of-type {
               border-top: 1px solid #E2E4E8;;
             }
@@ -409,13 +406,13 @@
               color: #1C1D1F;
               padding: 0 0 0 12px; //0 0 0 5
               margin: 0;
+              &:not(:last-child) {
+                margin: 0 0 10px 0;
+              }
+
               &::before {
                 content: '• ';
                 white-space: pre-wrap;
-              }
-
-              &:not(:last-child) {
-                margin: 0 0 10px 0;
               }
             }
           }
@@ -427,17 +424,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
             display: flex;
-            //justify-content: space-between;
-            //align-items: center;
             padding: 56px 16px 24px;
-            //height: 56px;
             background:  #FFF5CF url("/img/gift.svg") no-repeat;
-            //background-position: 16px;
             background-position: center 16px;
             border-radius: 8px;
-            //padding: 4px 4px 4px 56px;
             margin: 0 0 16px 0;
             &:last-of-type {
               margin: 0 0 16px 0;
@@ -480,11 +471,9 @@
           align-items: flex-start;
           justify-content: center;
           flex-direction: column;
-          //height: 72px;
           border: 1px solid #E2E4E8;
           border-radius: 8px;
-          padding: 16px; //16 16 16 56
-          //background: url("/img/icon-note.svg") no-repeat 16px center;
+          padding: 16px;
           margin: 0 0 32px 0;
 
           span {
@@ -514,46 +503,14 @@
           display: flex;
 
           &-btn {
-            display: none; //flex
-            justify-content: center;
-            align-items: center;
-            width: 159px;
-            height: 48px;
-            background: #E95836;
-            border-radius: 8px;
-            border: none;
-            color: #FFFFFF;
-            font-family: 'Raleway', sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 1.5em;
-            letter-spacing: 0.6px;
-            font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+            display: none;
           }
 
           .read-btn {
-            display: none; //flex
-            justify-content: center;
-            align-items: center;
-            width: 159px;
-            height: 48px;
-            background: #F3F6F9;
-            border-radius: 8px;
-            border: none;
-            color: #1C1D1F;
-            font-family: 'Raleway', sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 1.5em;
-            letter-spacing: 0.6px;
-            font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
-            margin: 0 auto 0 8px;
+            display: none;
           }
 
           .info {
-            font-family: 'Raleway', sans-serif;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
@@ -562,7 +519,6 @@
             color: #1C1D1F;
             display: flex;
             letter-spacing: 0;
-            //align-items: center;
             &:hover,
             &:active {
               color: #1C1D1F;
@@ -600,11 +556,13 @@
 
   @media screen and (min-width: 768px) {
     .table {
+      //margin: 0 40px 0 0;
+
       &__row {
         grid-template-areas:
           "logo bonus feedbacks complaints cta"
           "details details details details details";
-        grid-template-columns: 152px 130px 91px 139px 150px;
+        grid-template-columns: 152px 130px 91px 139px auto; //auto = 150px
         &:nth-child(2) {
           padding: 24px 0;
         }
@@ -660,9 +618,129 @@
         }
 
         &--cta {
+          justify-content: flex-end;
           .btn {
             &--overview {
               display: none;
+            }
+          }
+        }
+
+        &--details {
+          .mobile-selector {
+            border: none;
+          }
+
+          .comparison-container {
+            flex-direction: row;
+            margin: 0 0 24px;
+
+            .comparison-list {
+              width: calc(100% / 3);
+              list-style: none;
+              margin: 0;
+              padding: 0 16px;
+              &:not(:last-of-type) {
+                border-right: 1px solid #E2E4E8;
+              }
+              &:last-of-type {
+                border: none;
+              }
+
+              &__title {
+                font-size: 20px;
+                line-height: 1.6em;
+                &::before {
+                  height: 1.65em;
+                }
+              }
+
+              li {
+                font-size: 14px;
+                line-height: 1.7em;
+                letter-spacing: 0;
+                &:not(:last-child) {
+                  margin: 0 0 20px 0;
+                }
+              }
+            }
+          }
+
+          .bonuses {
+
+            .bonus {
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              height: 56px;
+              background-position: 16px;
+              padding: 4px 4px 4px 56px;
+              &:not(:first-child) {
+                display: flex;
+              }
+
+              span {
+                margin: 0;
+              }
+            }
+          }
+
+          .note {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+            padding: 16px 24px 16px 56px;
+            background: url("/img/icon-note.svg") no-repeat 16px center;
+
+            span {
+              margin: 0 20px 0 0;
+            }
+          }
+
+          .cta {
+            &-btn {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 159px;
+              height: 48px;
+              background: #E95836;
+              border-radius: 8px;
+              border: none;
+              color: #FFFFFF;
+              font-family: 'Raleway', sans-serif;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 16px;
+              line-height: 1.5em;
+              letter-spacing: 0.6px;
+              font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+            }
+
+            .read-btn {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 159px;
+              height: 48px;
+              background: #F3F6F9;
+              border-radius: 8px;
+              border: none;
+              color: #1C1D1F;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 16px;
+              line-height: 1.5em;
+              letter-spacing: 0.6px;
+              font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+              margin: 0 auto 0 8px;
+            }
+
+            .info {
+              align-items: center;
+              order: unset;
+              width: auto;
             }
           }
         }
