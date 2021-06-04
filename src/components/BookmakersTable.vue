@@ -12,7 +12,7 @@
          v-for="bookmaker of mockData">
       <div class="table-cell table-cell--logo">
         <div class="cell-number">{{bookmaker.id}}</div>
-        <div>
+        <div class="logo-wrapper">
           <img :src="'/img/logos/' + bookmaker.logo + '.svg'" class="bookmaker-logo">
           <span>FONBET</span>
         </div>
@@ -173,7 +173,7 @@
         "details details"
         "cta cta";
       column-gap: 4px;
-      grid-template-columns: 152px 130px 91px 139px 150px;
+      grid-template-columns: auto 130px; // 152px 130px 91px 139px 150px;
       padding: 24px 0; //24 0
       &:not(:last-child) {
         border-bottom: 1px solid #E2E4E8;
@@ -204,7 +204,7 @@
 
     &-cell {
       display: flex;
-      justify-content: center;
+      //justify-content: center;
       align-items: center;
       font-weight: 700;
       font-size: 14px;
@@ -241,6 +241,11 @@
           flex-shrink: 0;
           margin: 0 16px 0 0;
           align-self: flex-start;
+        }
+
+        .logo-wrapper {
+          display: flex;
+          flex-direction: column;
         }
 
         .bookmaker-logo {
@@ -293,7 +298,9 @@
 
       &--cta {
         grid-area: cta;
-        padding: 0 0 0 30px; //0 0 0 12
+        //padding: 0 0 0 30px; //0 0 0 12
+        padding: 0 0 0 14px;
+        justify-content: flex-end;
 
         .btn {
           display: flex;
@@ -314,7 +321,7 @@
 
         .btn--cta {
           background: #E95836;
-          margin: 0 4px 0 0;
+          margin: 0 8px 0 0; // 0 4 0 0
         }
 
         .btn--overview {
@@ -522,7 +529,7 @@
           display: flex;
 
           &-btn {
-            display: flex;
+            display: none; //flex
             justify-content: center;
             align-items: center;
             width: 159px;
@@ -541,7 +548,7 @@
           }
 
           .read-btn {
-            display: flex;
+            display: none; //flex
             justify-content: center;
             align-items: center;
             width: 159px;
@@ -569,7 +576,8 @@
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #1C1D1F;
             display: flex;
-            align-items: center;
+            letter-spacing: 0;
+            //align-items: center;
             &:hover,
             &:active {
               color: #1C1D1F;
@@ -579,9 +587,10 @@
               background: url("/img/icon-info.svg") no-repeat center;
               background-size: contain;
               width: 14px;
-              height: 15px;
+              height: 1.7em;
               margin: 0 10px 0 0;
               display: block;
+              flex-shrink: 0;
             }
           }
         }
